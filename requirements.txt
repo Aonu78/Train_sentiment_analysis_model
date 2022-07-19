@@ -1,0 +1,11 @@
+Pillow
+pillow
+fast_ml
+pandas
+numpy
+transformers
+torch
+sklearn
+datasets
+fastapi
+seaborn
