@@ -2,7 +2,7 @@ from fastapi import FastAPI, File, UploadFile
 from train_sentiment import train_model
 from sentiment_analysis import senti_test
 import os
-
+import uvicorn
 app = FastAPI()
 
 
@@ -18,3 +18,6 @@ async def train_sentiment(text_are_name:str,label_are_name:str,dataframe: Upload
 async def test_sentiment(text:str):
     answer = senti_test(text)
     return {"Sentiment":answer}
+
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="127.0.0.1", port=5000, log_level="info")
